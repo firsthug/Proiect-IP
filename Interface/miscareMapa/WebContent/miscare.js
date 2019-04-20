@@ -157,6 +157,12 @@ var backMm=sprite({
 
 
 var road =	[1362,227,
+			1362,403,
+			845,405,
+			845,220,
+			736,220,
+			736,492,
+			1362,486,
 			1362,1268,
 			445,1268,	
 			445,1072,
@@ -172,7 +178,13 @@ var road =	[1362,227,
 			1553,227,
 			1362,227];
 
-
+var npcArea = [501,104,
+				501,226,
+				714,226,
+				714,502,
+				113,502,
+				113,104];
+			
 function turnThePage(dir){
 	var feetX=deltaX+40;
 	var feetY=deltaY+229;
@@ -198,7 +210,9 @@ function turnThePage(dir){
 			//window.open("../../Pet Shop/PetShop.php","_self");
 			dif=0;
 			}
-	
+	if(nextY<220 && nextX<=845 && nextX>=736 && feetY>=220){
+			//selectare joc
+	}
 	for(i=0;i<road.length-2;i+=2){
 		if(road[i]==road[i+2] && road[i+1]<road[i+3]){
 			if(nextX<road[i] && nextY>=road[i+1] && nextY<=road[i+3] && feetX>=road[i])
