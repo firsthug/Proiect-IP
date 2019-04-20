@@ -1,0 +1,148 @@
+
+			#outerWrapper{
+			
+			    text-align: center;
+				position: relative;
+				z-index: 0;
+				width: 1193px;
+				height: 800px;
+				background-size:cover;
+				background-image: url(https://i.imgur.com/SxOptCX.png);
+				background-repeat: no-repeat;
+				
+				
+			}
+			#room{
+			
+				position: absolute;
+				z-index: 0;
+			}
+			#title{
+		        
+				margin-top: 70px;
+				display: inline-block;
+			}
+			
+			#container1{
+				
+				text-align: center;
+				position: relative;
+				z-index: 0;
+				width: 1193px;
+
+				
+			}
+			#rectangle{
+				margin-top: 70px;
+				position:relative;
+				display: inline-block;
+				background-image: url(https://i.imgur.com/S7tWyBY.png);
+				height:266px;
+				width:500px;
+				text-align:left;
+			}
+			#form{
+			
+				margin-top: 30px;
+			}
+		    label{
+			    
+				font-size:20px;
+				font-family:lucida console;
+				color:cyan;
+				margin-left:20px;
+			}
+			.input-group{
+			 
+				margin-top:10px;
+				margin-left:60px;
+			}
+			.buton{
+				
+				margin-top:10px;
+				text-align:center;
+				
+			}
+			
+			.btn {
+			
+				display: inline-block;
+				border-radius: 4px;
+				background-color: #0a2928;
+				border: none;
+				color: cyan;
+				font-family:lucida console;
+				font-weight:bold;
+				text-align: center;
+				font-size: 15px;
+				padding: 15px;
+				width: 200px;
+				transition: all 0.5s;
+				cursor: pointer;
+				margin: 0px;
+			}
+
+			.btn span {
+				
+				cursor: pointer;
+				display: inline-block;
+				position: relative;
+				transition: 0.5s;
+			}
+
+			.btn span:after {
+				
+				content: '\00bb';
+				position: absolute;
+				opacity: 0;
+				top: 0;
+				right: -20px;
+				transition: 0.5s;
+			}
+
+			.btn:hover span {
+				 
+				 padding-right: 25px;
+			}
+
+			.btn:hover span:after {
+				 
+				 opacity: 1;
+				 right: 0;
+			}
+			
+			input {
+    
+				padding: 5px 10px;
+				margin: 2px 0;
+				box-sizing: border-box;
+				border-radius: 5px;
+				border-color:cyan;
+				background-color: #48D1CC;
+			}
+			
+			#sign{
+				margin-top:20px;
+				font-family:lucida console;
+				
+			}
+			a:link, a:visited {
+				background-color: #0a2928;
+				color: white;
+				padding: 14px 25px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				border-radius: 5px;
+				color:cyan;
+			}
+
+
+			a:hover, a:active {
+				background-color: #20B2AA;
+				color:#0a2928;
+			}
+
+			p{
+				font-weight:bold;
+			}
