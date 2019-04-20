@@ -1,0 +1,313 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+ 	background: #ffffff; 
+	font-family: 'Permanent Marker', cursive;
+	font-size: 16px;
+}
+
+.container {
+	width:800px;
+	height:536px;
+	background: url(../Imagini/Pairs.png);
+  	background-size: 800px 536px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+h1 {
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size:40px;
+	-webkit-margin-before:10px;
+	-webkit-margin-after: 0px;
+}
+
+
+/*
+ * Stiluri pentru carti
+ */
+
+
+.deck {
+	padding: 0px 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.deck .card {
+	background-image: url(../Imagini/spate.png);
+	width:70px;
+	height:81px;
+  	background-size:70px 81px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	cursor: pointer;
+	-webkit-margin-start: 5px;
+	-webkit-margin-after: 30px;
+}
+
+.deck .card.open {
+	transform: rotateY(0);
+	cursor: default;
+	animation-name: flipInY;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+.deck .card.show {
+/* 	font-size: 33px; */
+}
+
+
+.deck .card.match {
+	cursor: default;
+	animation-name: rubberBand;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+.deck .card.unmatched {
+	animation-name: pulse;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+.deck .card.disabled {
+	pointer-events: none;
+}
+
+.deck .card.show.a{
+	background-image: url(../Imagini/1.png);
+}
+.deck .card.show.b{
+	background-image: url(../Imagini/2.png);
+}
+.deck .card.show.c{
+	background-image: url(../Imagini/3.png);
+}
+.deck .card.show.d{
+	background-image: url(../Imagini/4.png);
+}
+.deck .card.show.e{
+	background-image: url(../Imagini/5.png);
+}
+.deck .card.show.f{
+	background-image: url(../Imagini/6.png);
+}
+.deck .card.show.g{
+	background-image: url(../Imagini/7.png);
+}
+.deck .card.show.h{
+	background-image: url(../Imagini/8.png);
+}
+
+
+.deck .card.match.a{
+	background-image: url(../Imagini/1.png);
+}
+.deck .card.match.b{
+	background-image: url(../Imagini/2.png);
+}
+.deck .card.match.c{
+	background-image: url(../Imagini/3.png);
+}
+.deck .card.match.d{
+	background-image: url(../Imagini/4.png);
+}
+.deck .card.match.e{
+	background-image: url(../Imagini/5.png);
+}
+.deck .card.match.f{
+	background-image: url(../Imagini/6.png);
+}
+.deck .card.match.g{
+	background-image: url(../Imagini/7.png);
+}
+.deck .card.match.h{
+	background-image: url(../Imagini/8.png);
+}
+
+
+/* Stiluri scor */
+
+
+.score-panel {
+	text-align: left;
+}
+
+
+
+
+
+.timer {
+	font-size: 25px;
+}
+
+.pairs {
+	font-size: 25px;
+}
+
+
+/*
+ * Stiluri final
+ */
+
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+  
+.popup {
+	margin: 100px 200px;
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	width: 400px;
+	position: absolute;
+	transition: all 5s ease-in-out;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+  
+.popup h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+.popup .close:hover {
+	color: #E5F720;
+}
+
+.popup .content-1,
+.content-2 {
+	max-height: 30%;
+	overflow: auto;
+	text-align: center;
+}
+
+.show {
+	visibility: visible !important;
+	opacity: 100 !important;
+}
+
+
+
+/* animatii */
+@keyframes flipInY {
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		animation-timing-function: ease-in;
+		opacity: 0;
+	}
+
+	40% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		animation-timing-function: ease-in;
+	}
+
+	60% {
+		transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+		opacity: 1;
+	}
+
+	80% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+	}
+
+	to {
+		transform: perspective(400px);
+	}
+}
+@keyframes rubberBand {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, .95, 1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+
+@keyframes pulse {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.2, 1.2, 1.2);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
