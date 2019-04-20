@@ -178,13 +178,11 @@ var road =	[1362,227,
 			1553,227,
 			1362,227];
 
-var npcArea = [501,104,
-				501,226,
-				714,226,
-				714,502,
-				113,502,
-				113,104];
-			
+var npcAreaY = [104, 502];
+var npcAreaYCut= 226;
+var npcAreaX1 = [113, 501];
+var npcAreaX2 = [113, 714];
+
 function turnThePage(dir){
 	var feetX=deltaX+40;
 	var feetY=deltaY+229;
