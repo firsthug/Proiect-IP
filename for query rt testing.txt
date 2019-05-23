@@ -1,0 +1,14 @@
+$file = 'locatia si denumirea fisierului';
+$current = file_get_contents($file);
+$started = microtime(true);
+
+mysql_query(ceva deja facut);
+
+$end = microtime(true);
+$diff = $end - $started;
+$queryTime = number_format($diff, 10);
+
+$current .= "Timp de raspuns query(de unde e query-ul, ex query.ul pt user din ranking/coins sau quizzh)";
+$current .= $querryTime;
+
+file_put_contents($file, $current);
