@@ -53,16 +53,19 @@ function   (GmaeBoardRenderer, TreeSearch, Board, Action) {
 		if(board.status === board.IN_PROGRESS)
 			return;
 		
-		let message = '';
-		
 		switch(board.status) {
 			case board.DRAW:
-				message = 'Game Result: Draw!';
+				alert('Game Result: Draw!');
+				 setTimeout(function(){
+            location.reload();
+            },500);   
 				break;
 			default:
-				message = 'Player ' + board.status + ' wins!';
+				alert('Player ' + board.status + ' wins!');
+				 setTimeout(function(){
+            location.reload();
+            },500);   
 		}
-		
-		alert(message);
+
 	}
 });

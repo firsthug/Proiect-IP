@@ -209,7 +209,9 @@ function turnThePage(dir){
 			dif=0;
 			}
 	if(nextY<220 && nextX<=845 && nextX>=736 && feetY>=220){
-			//selectare joc
+			var x=$.colorbox({href:"../../../Games/SelectGame.php",iframe:true,
+			width:"80%", height:"90%", onClosed:function(){dif=7.5;}});
+			dif=0;
 	}
 	for(i=0;i<road.length-2;i+=2){
 		if(road[i]==road[i+2] && road[i+1]<road[i+3]){

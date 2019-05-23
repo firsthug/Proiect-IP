@@ -22,64 +22,26 @@ if (isset($_GET['logout'])) {
 	header("location:../First_page.html");
 }
 
-if (isset($_POST['buy'])) {
-	$type = $_POST['pet'];
-	$username= $_SESSION['username'];
+if (isset($_POST['play'])) {
+	$type = $_POST['selgame'];
 
-	$connection = Connection::getInstance();
-    $userTable = new UserTable($connection);
-    $user = $userTable->getUserByUsername($username);
-    $coins=$user->getCoins();
+		if ($type === 'Tic')
+			{	?>
+				<script type="text/javascript">
+				window.open("TicTacToe/TicTacToe.php","_self");
+				</script>
+				<?php
+			}
+			
+		else{
+			?>
+				<script type="text/javascript">
+				window.open("Connect Four/ConnectFour.php","_self");
+				</script>
+				<?php
+	}
 
-					if($type==='cat')
-					{
-						if($coins>2000)
-							{
-	
-								 $userTable->updateCoins($user,$coins-2000);
-								 $userTable->updatePet($user,1);
-                			}
-
-                			else
-
-                			echo "<script type='text/javascript'>alert('Not enough coins!');</script>";
-					}
-					else
-					{
-
-							if($type==='lizard')
-					{
-						if($coins>1000)
-							{
-
-								 $userTable->updateCoins($user,$coins-1000);
-								  $userTable->updatePet($user,3);
-                			}
-                			else
-
-                			echo "<script type='text/javascript'>alert('Not enough coins!');</script>";
-					}
-					else
-					{
-
-							if($type==='onion')
-					{
-						if($coins>500)
-							{
-								 $userTable->updateCoins($user,$coins-500);
-								  $userTable->updatePet($user,4);
-                			}
-                			else
-
-                			echo "<script type='text/javascript'>alert('Not enough coins!');</script>";
-					}
-
-					}
-
-					}
-
-
-					}
+	}
 
 ?>
 
@@ -87,7 +49,7 @@ if (isset($_POST['buy'])) {
 <html>
 	<head>
 	  
-	  <title>Pet Shop</title>
+	  <title>Select the game</title>
 	  <link rel="stylesheet" type="text/css" href="../CSS/SelectGame.css">
 	  <link rel="stylesheet" type="text/css" href="../CSS/UserBar.css"/>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -98,7 +60,7 @@ if (isset($_POST['buy'])) {
 
 			$(".iframe3").click(function () { 
 
-				$.colorbox({iframe:true, width:"60%", height:"60%", href:"../ranking/rank.php"});
+				$.colorbox({iframe:true, width:"60%", height:"60%", href:"../Ranking/rank.php"});
 
 			});
 
@@ -154,7 +116,7 @@ if (isset($_POST['buy'])) {
 
 			<div id="logout">
 
-				<p class="btn"> <a href="PetShop.php?logout='1'" >Log out</a> </p>
+				<p class="btn"> <a href="SelectGame.php?logout='1'" >Log out</a> </p>
 			</div>
 
 		</div>
@@ -179,7 +141,7 @@ if (isset($_POST['buy'])) {
 							<div id="game1">
 							
 								<label class="container">
-									 <input type="radio" name="pet" value="cat" > Tic Tac Toe<br>
+									 <input type="radio" name="selgame" value="Tic" > Tic Tac Toe<br>
 									 <span class="checkmark"></span>
 								</label>
 							  
@@ -188,7 +150,7 @@ if (isset($_POST['buy'])) {
 							<div id="game2">
 							
 							   <label class="container">
-									 <input type="radio" name="pet" value="lizard" > Connect Four<br>
+									 <input type="radio" name="selgame" value="Connect" > Connect Four<br>
 									 <span class="checkmark"></span>
 							   </label>
 							   
@@ -196,7 +158,7 @@ if (isset($_POST['buy'])) {
 							
 
 							<div class="input-group">
-								<button type="submit" class="btn" name="buy">Play</button>
+								<button type="submit" class="btn" name="play">Play</button>
 							</div>
 				</form>
 			</div>

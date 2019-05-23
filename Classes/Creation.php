@@ -31,8 +31,9 @@ try{
         $user = $userTable->getUserByUsername($username);
         $id = $user->getId();
         $userTable->updateUser($username, $gender,$ign);
-        $userTable->insertField($id,$fields_val);
         $userTable->insertUserGame($id);
+        $userTable->insertField($id,$fields_val);
+        
 
   header('location: ../Room.php?');   //momentan   
 }

@@ -850,16 +850,16 @@
  
 	function start(){
 
-                    var input = $("#myPhpValue").val();
+                    var input = document.getElementById("myPhpValue").value;
                     var fields = input.split("-");
 
                     materie1 = fields[0];
                     materie2 = fields[1];
-                    //alert(materie1 + materie2);
+                   materie2= materie2.replace(/\s/g, '');
+            		 console.log(materie1 + materie2);
                     
             if(count==0)
             {
-            	//alert(" materie1");
             	switch(materie1){
             case 'history': quiz=istorie;break;
             case 'literature': quiz=literatura;break;
@@ -870,8 +870,7 @@
             case 'nobel': quiz=nobel_prz;break;
             }}
             else{
-            	//alert(" materie2");
-            	//quiz=null;
+
             	switch(materie2){
 			case 'history': quiz=istorie;break;
             case 'literature': quiz=literatura;break;

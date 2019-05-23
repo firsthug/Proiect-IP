@@ -223,8 +223,15 @@ Game.prototype.updateStatus = function() {
     // Human won
     if (that.board.score() == -that.score) {
         that.status = 1;
-        that.markWin();
+        that.markWin();     
         alert("You have won!");
+              createCookie("coinsC", that.score/420, "2");
+            createCookie("scoreC", that.score/220, "2");
+            setTimeout(function(){
+            location.reload();
+            },5000);    
+        deleteCookie("coinsC");
+        deleteCookie("scoreC");
     }
 
     // Computer won
@@ -296,6 +303,24 @@ function Start() {
     $('td').hover(function() {
         $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
     });
+}
+
+function createCookie(name, value, days) {
+  var expires;
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toGMTString();
+  } else {
+   expires = "";
+  }
+  document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
+  
+}
+
+function deleteCookie(name)
+{
+ document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
 window.onload = function() {

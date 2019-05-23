@@ -112,11 +112,11 @@ class UserTable {
 
      public function insertUserGame($id) {
 
-          for ($i = 1; $i <= 4; $i++){
-            $sql= "INSERT INTO usergame (id_user,id_game,highscore,current_score,daily_count) VALUES('$id', '$i',0,0,0)";
-        $result = mysqli_query($this->link, $sql);
-        if(! $result ) 
-            throw new Exception("Could not insert into usergame table! ");
+          for ($i = 1; $i <= 6; $i++){                                    
+            $sql= "INSERT INTO `usergame`( `id_user`, `id_game`, `highscore`, `current_score`, `daily_count`) VALUES  ('$id', '$i',1,1,1)"; 
+            $result = mysqli_query($this->link, $sql);
+            if(! $result ) 
+                throw new Exception("Could not insert into usergame table! ");
         }  
     }
 

@@ -1,4 +1,4 @@
-<!--<?php
+<?php
 require_once '../../Classes/User.php';
 require_once '../../Classes/UserTable.php';
 require_once '../../Classes/Connection.php';
@@ -6,7 +6,7 @@ require_once '../../Classes/Functions.php';
 
 start_session();
 ?>
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +17,7 @@ start_session();
 	<link rel="stylesheet" type="text/css" href="quiz_css_setup.css">
 </head>
 <body>
-	<!--
+	
 	<?php 
 	
 	 $username= $_SESSION['username'];
@@ -102,7 +102,7 @@ echo "Err bad query". mysqli_error($connection);
 
 mysqli_close($connection);
 	?>
-	-->
+	
 	<div id="frame" role="content"></div>
 </body>
 </html>
