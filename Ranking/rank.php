@@ -24,6 +24,8 @@
     <li><a data-toggle="pill" href="#menu3">Memory</a></li>
     <li><a data-toggle="pill" href="#menu4">Quizz</a></li>
     <li><a data-toggle="pill" href="#menu5">Coins</a></li>
+    <li><a data-toggle="pill" href="#menu6">Tic Tac Toe</a></li>
+    <li><a data-toggle="pill" href="#menu7">Connect Four</a></li>
   </ul>
   
   <div class="tab-content" >
@@ -43,6 +45,14 @@
 
      <div id="menu5" class="tab-pane fade">
        <object width="500" height="500" id="content" data="coins.php"></object> 
+    </div>
+
+      <div id="menu6" class="tab-pane fade">
+       <object width="500" height="500" id="content" data="tictac.php"></object> 
+    </div>
+
+      <div id="menu7" class="tab-pane fade">
+       <object width="500" height="500" id="content" data="connect.php"></object> 
     </div>
 </div>
 </div>

@@ -5,6 +5,7 @@ require_once '../../Classes/Connection.php';
 require_once '../../Classes/Functions.php';
 
 start_session();
+
 ?>
 <!DOCTYPE html>
 <html>

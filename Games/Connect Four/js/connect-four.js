@@ -229,7 +229,7 @@ Game.prototype.updateStatus = function() {
             createCookie("scoreC", that.score/220, "2");
             setTimeout(function(){
             location.reload();
-            },5000);    
+            },500);    
         deleteCookie("coinsC");
         deleteCookie("scoreC");
     }
@@ -239,12 +239,24 @@ Game.prototype.updateStatus = function() {
         that.status = 2;
         that.markWin();
         alert("You have lost!");
+        createCookie("scoreC", 1, "2");
+        setTimeout(function(){
+            window.location = './ConnectFour.php'; 
+            },500); 
+        deleteCookie("scoreC");
     }
 
     // Tie
     if (that.board.isFull()) {
         that.status = 3;
         alert("Tie!");
+        createCookie("scoreC", 200, "2");
+         createCookie("coinsC", that.score/620, "2");
+        setTimeout(function(){
+            window.location = './ConnectFour.php'; 
+            },500); 
+        deleteCookie("scoreC");
+        deleteCookie("coinsC");
     }
 
     var html = document.getElementById('status');

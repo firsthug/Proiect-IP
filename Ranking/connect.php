@@ -19,23 +19,22 @@ start_session();
 <body>
   <div id="rectangle">
  <?php   
-    $connection = Connection::getInstance();
-    
+  $connection = Connection::getInstance();
    $query = "SELECT @rownum:=@rownum + 1 as row_number, t.*
-FROM ( SELECT u.IGN FROM users u, usergame g WHERE u.id=g.id_user and g.id_game=4 order by g.highscore desc) t,
+FROM ( SELECT u.IGN FROM users u, usergame g WHERE u.id=g.id_user and g.id_game=6 order by g.highscore desc) t,
 (SELECT @rownum := 0) r ";
     $results = mysqli_query($connection, $query);
     if (mysqli_num_rows($results) != 1) { echo "<table>"; 
 
 while($row = mysqli_fetch_array($results,MYSQLI_ASSOC)){   
-echo "<tr><td>" . $row['row_number'] . "</td><td>" . $row['IGN'] . "</td></tr>";  
+echo "<tr><td>" . $row['row_number'] . "</td><td>" . $row['IGN'] . "</td></tr>";   
 }
 
 echo "</table>"; 
 
 }
-
 ?>
 </div>
+
 </body>
 </html>

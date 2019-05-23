@@ -107,7 +107,9 @@ start_session();
 
                 <div id="debug">
                     <!--<p><strong>AI debugging</strong></p>-->
-                    <p>Generated with <span id="ai-iterations">?</span> iterations</p>
+                    <p>Generated with</p>
+                     <p> <span id="ai-iterations">?</span> iterations</p>
+
                     <p>Measured with <span id="ai-time">?</span></p>
                     <p><span id="ai-column">Column: ?</span></p>
                     <p><span id="ai-score">Score: ?</span></p>

@@ -47,7 +47,23 @@ function   (GmaeBoardRenderer, TreeSearch, Board, Action) {
 		player = 3 - player;
 		setTimeout(printStatus, 0);
 	}
-	
+	function createCookie(name, value, days) {
+  var expires;
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toGMTString();
+  } else {
+   expires = "";
+  }
+  document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
+  
+}
+
+function deleteCookie(name)
+{
+ document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
 	function printStatus() {
 		
 		if(board.status === board.IN_PROGRESS)
@@ -56,15 +72,23 @@ function   (GmaeBoardRenderer, TreeSearch, Board, Action) {
 		switch(board.status) {
 			case board.DRAW:
 				alert('Game Result: Draw!');
+				  createCookie("coinsT",100, "2");
+            createCookie("scoreT", 50, "2");
 				 setTimeout(function(){
-            location.reload();
-            },500);   
+           window.location = './TicTacToe.php'; 
+            },500);  
+             deleteCookie("coinsT");
+        deleteCookie("scoreT"); 
 				break;
 			default:
 				alert('Player ' + board.status + ' wins!');
+				  createCookie("coinsT",200, "2");
+            createCookie("scoreT", 100, "2");
 				 setTimeout(function(){
-            location.reload();
-            },500);   
+           window.location = './TicTacToe.php'; 
+            },500);
+             deleteCookie("coinsT");
+        deleteCookie("scoreT");   
 		}
 
 	}
