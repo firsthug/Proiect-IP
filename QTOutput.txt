@@ -1,0 +1,1 @@
+     Timp de raspuns query select  0.0009031296     Timp de raspuns query insert  0.2181470394     Timp de raspuns query update  0.1895737648     Timp de raspuns query delete  0.1637179852

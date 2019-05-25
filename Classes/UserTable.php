@@ -120,6 +120,22 @@ class UserTable {
         }  
     }
 
+    public function insertPet($name)
+    {
+         $sql= "INSERT INTO `pets`(`id`, `name`) VALUES (5,'$name')"; 
+            $result = mysqli_query($this->link, $sql);
+            if(! $result ) 
+                throw new Exception("Could not insert into pets table! ");
+    }
+
+         public function deletePet($id)
+    {
+         $sql= "DELETE FROM `pets` WHERE id='$id' "; 
+            $result = mysqli_query($this->link, $sql);
+            if(! $result ) 
+                throw new Exception("Could not delete entry! ");
+    }
+
     public function getUserById($id) {
         $sql = "SELECT * FROM users WHERE id = '$id' ";
         $result = mysqli_query($this->link, $sql);

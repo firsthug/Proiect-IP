@@ -23,3 +23,5 @@ class Connection {
         return $date_arr[2] . '-' . $date_arr[1] . '-' . $date_arr[0];
     }
 }
+
+?>
